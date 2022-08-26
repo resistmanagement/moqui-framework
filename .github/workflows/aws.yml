@@ -27,10 +27,10 @@
 name: Deploy to Amazon ECS
 
 # TODO: Perhaps add automatic deploy on push
-#on:
-#  push:
-#    branches:
-#      - "resistmanagement"
+on:
+  push:
+    branches:
+      - "resistmanagement"
 
 env:
   AWS_REGION: ${{ secrets.MY_AWS_REGION }}                   # set this to your preferred AWS region, e.g. us-west-1
@@ -77,9 +77,9 @@ jobs:
         # Build a docker container and
         # push it to ECR so that it can
         # be deployed to ECS.
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-        # docker pull acetousk/moqui
-        # docker tag acetousk/moqui $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        ./gradlew getRuntime downloadOpenSearch getComponentSet -PcomponentSet=resistmanagement addRuntime
+        cd docker/simple
+        ./docker-build.sh ../.. $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
@@ -103,4 +103,4 @@ jobs:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
         service: ${{ env.ECS_SERVICE }}
         cluster: ${{ env.ECS_CLUSTER }}
-        wait-for-service-stability: true
+        wait-for-service-stability: false # setting this to true uses a lot of resources
