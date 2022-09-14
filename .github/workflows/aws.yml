@@ -103,4 +103,4 @@ jobs:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
         service: ${{ env.ECS_SERVICE }}
         cluster: ${{ env.ECS_CLUSTER }}
-        wait-for-service-stability: false # setting this to true uses a lot of resources
+        wait-for-service-stability: true # setting this to true uses a lot of resources
