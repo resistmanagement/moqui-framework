@@ -77,7 +77,9 @@ jobs:
         # Build a docker container and
         # push it to ECR so that it can
         # be deployed to ECS.
-        ./gradlew getRuntime downloadOpenSearch getComponentSet -PcomponentSet=resistmanagement addRuntime
+        ./gradlew getRuntime downloadOpenSearch getComponentSet -PcomponentSet=resistmanagement 
+        sleep 1
+        ./gradlew addRuntime
         cd docker/simple
         ./docker-build.sh ../.. $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
