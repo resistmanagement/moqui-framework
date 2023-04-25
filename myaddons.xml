@@ -22,7 +22,7 @@
     <component name="resistmanagement" group="resistmanagement" version="" branch="resistmanagement"/>
 
     <!-- Component Sets -->
-    <component-set name="resistmanagement" components="PopCommerce,HiveMind,resistmanagement"/>
+    <component-set name="resistmanagement" components="PopCommerce,HiveMind,MarbleERP,resistmanagement"/>
 
     <!-- Release builds:
         gradle getComponentSet -PcomponentSet=custom -PlocationType=release
