@@ -4,19 +4,12 @@
 
     <!-- Mantle Business Artifact and Integration Components -->
     <component name="mantle-udm" group="resistmanagement" version="2.2.0" branch="resistmanagement"/>
-    <component name="mantle-usl" group="resistmanagement" version="2.2.0" branch="resistmanagement"/>
 
     <!-- Moqui Applications -->
     <component name="SimpleScreens" group="resistmanagement" version="2.2.0" branch="resistmanagement"/>
-    <component name="HiveMind" group="resistmanagement" version="1.5.0" branch="resistmanagement"/>
-    <component name="PopCommerce" group="resistmanagement" version="2.2.0" branch="resistmanagement"/>
-    <component name="MarbleERP" group="resistmanagement" version="1.0.0" branch="resistmanagement"/>
-    <component name="moqui-org" group="resistmanagement" version="" branch="resistmanagement"/><!-- no releases -->
     <component name="Sales" group="xolvegroup" version="" branch="main"/><!-- no releases -->
 
     <!-- Moqui Tool Components -->
-    <component name="moqui-hazelcast" group="resistmanagement" version="1.1.3" branch="resistmanagement"/>
-    <component name="moqui-image" group="acetousk" version="0.1.0" branch="master"/>
 
     <!-- Resist Management Components -->
     <component name="resistmanagement" group="resistmanagement" version="" branch="resistmanagement"/>
